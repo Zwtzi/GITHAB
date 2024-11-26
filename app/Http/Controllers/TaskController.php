@@ -144,9 +144,9 @@ class TaskController extends Controller
 
     public function notifyUser($assignedUserId)
     {
-        $task = Task::where('assigneduser_id',$assignedUserId)->first();
-        $user = User::where('id', $assignedUserId)->first();
-        Notification::send($user, new TaskAssigned($task));
+        // $task = Task::where('assigneduser_id',$assignedUserId)->first();
+        // $user = User::where('id', $assignedUserId)->first();
+        // Notification::send($user, new TaskAssigned($task));
 
         return back()->with('success', 'Task notification email has been sent to the assigned user');
     }
